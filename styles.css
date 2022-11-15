@@ -14,17 +14,12 @@
     padding: 20px;
 }
 
-.screen {
-    flex:  auto;
-    background-color: black;
-    border-radius: 20px;
-}
+
 
 .buttons-area{
     display: flex;
     border-radius: 20px;
-    flex: 2;
-    padding: 10px;
+    padding: 1vw;
     flex-direction: column;
     justify-content: end;
 }
@@ -69,4 +64,29 @@ button:hover {
     background-color: #2e86c0;
     border-color: #337cac;
     color: #fff;
+}
+
+.screen {
+    flex:  auto;
+    background-color: black;
+    border-radius: 20px;
+    color: white;
+    padding: 10px;
+    position: relative;
+}
+
+.pre-result{
+    font-size: 2vw;
+    position: absolute;
+    right: 5px;
+    top: 20px;
+    margin: 10px;
+}
+
+.result{
+    font-size: 4vw;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    margin: 10px;
 }
