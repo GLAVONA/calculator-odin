@@ -79,6 +79,13 @@ buttons.forEach(button=>{
                     operator = button.value;
                     decimal=false;
                 }
+                else if (operators.some(op=>preResult.textContent.includes(op))){
+                    equalPressed=true;
+                    getNumbers();
+                    answer = operate(operator,numberA,numberB).toFixed(15);
+                    result.textContent = parseFloat(answer);
+                    decimal = false;
+                }
             }
             if (result.textContent!=="" && equalPressed){
                 operator = button.value;
@@ -86,9 +93,7 @@ buttons.forEach(button=>{
                 equalPressed=false;         
                 decimal=false;
             }
-            else{
-
-            }
+            
         }
 
         if (button.className === "all-clear"){
