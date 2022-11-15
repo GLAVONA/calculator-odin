@@ -89,4 +89,6 @@ button:hover {
     bottom: 5px;
     right: 5px;
     margin: 10px;
+    display: inline-block;
+    word-break: break-word;
 }
