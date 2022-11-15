@@ -58,7 +58,8 @@ buttons.forEach(button=>{
         if (button.className === "number") {
             if (equalPressed)
             {
-                allClear();
+                preResult.textContent="";
+                answer = 0;
                 equalPressed=false;
                 decimal = false;
             }
