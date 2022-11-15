@@ -42,7 +42,7 @@ button:hover {
 
 .all-clear {
     background-color: #f0595f;
-    border-color: #b0353a;
+    border-color: black;
     color: #fff;
   }
 
@@ -62,7 +62,7 @@ button:hover {
     grid-column-start: 4;
     height: 100%;
     background-color: #2e86c0;
-    border-color: #337cac;
+    border-color: black;
     color: #fff;
 }
 
@@ -75,7 +75,7 @@ button:hover {
     position: relative;
 }
 
-.pre-result{
+.result{
     font-size: 2vw;
     position: absolute;
     right: 5px;
@@ -83,7 +83,7 @@ button:hover {
     margin: 10px;
 }
 
-.result{
+.pre-result{
     font-size: 4vw;
     position: absolute;
     bottom: 5px;
