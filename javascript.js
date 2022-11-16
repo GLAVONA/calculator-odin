@@ -2,12 +2,12 @@ const buttons = document.querySelectorAll("button");
 const result = document.querySelector(".result")
 const preResult = document.querySelector(".pre-result");
 const operators = ["+","-","*","/"]
+const numbersRegex = /(\d*\.?\d+)\D(\d*\.?\d+)/;
 let numberA = 0;
 let numberB = 0;
 let operator = "";
 let answer = 0;
 let equalPressed = false;
-let numbersRegex = /(\d*\.?\d+)\D(\d*\.?\d+)/;
 let decimal = false;
 
 function add(a,b) {
@@ -53,7 +53,7 @@ function getNumbers(){
 }
 
 buttons.forEach(button=>{
-    button.addEventListener('click', populatePreResult=>{
+    button.addEventListener('click', ()=>{
         
         if (button.className === "number") {
             if (equalPressed)
@@ -64,7 +64,7 @@ buttons.forEach(button=>{
                 decimal = false;
             }
             equalPressed=false;
-        preResult.textContent += button.value;      
+            preResult.textContent += button.value;
         }
 
         if (button.className==="operator"){
