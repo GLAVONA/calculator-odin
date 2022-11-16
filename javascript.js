@@ -9,6 +9,8 @@ let operator = "";
 let answer = 0;
 let equalPressed = false;
 let decimal = false;
+let zeroCounter = 0;
+
 
 function add(a,b) {
     return a+b;
@@ -56,6 +58,13 @@ buttons.forEach(button=>{
     button.addEventListener('click', ()=>{
         
         if (button.className === "number") {
+            if(button.value==="0")
+            {
+                if(zeroCounter>0 && decimal==false){
+                    return;
+                }
+                zeroCounter++;
+            }
             if (equalPressed)
             {
                 preResult.textContent="";
@@ -94,12 +103,13 @@ buttons.forEach(button=>{
                 equalPressed=false;         
                 decimal=false;
             }
-            
+            zeroCounter=0;
         }
 
         if (button.className === "all-clear"){
             allClear()
             decimal = false;
+            zeroCounter=0;
         }
 
         if (button.className==="equal-sign"){
@@ -108,6 +118,7 @@ buttons.forEach(button=>{
             answer = operate(operator,numberA,numberB).toFixed(15);
             result.textContent = parseFloat(answer);
             decimal = false;
+            zeroCounter=0;
         }
 
         if(button.className === "decimal"){
@@ -120,6 +131,7 @@ buttons.forEach(button=>{
                     preResult.textContent += ".";
                     equalPressed=false;
                 }
+                zeroCounter=0;
             }
         }
 
