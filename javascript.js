@@ -61,6 +61,7 @@ function getNumbers(){
 buttons.forEach(button=>{
     button.addEventListener('click', ()=>{        
         if (button.className === "number") {
+            resize();
             if(button.value==="0")
             {
                 if(zeroCounter>0 && decimal==false){
@@ -78,10 +79,10 @@ buttons.forEach(button=>{
             }
             equalPressed=false;
             preResult.textContent += button.value;
-            resize();
         }
 
         if (button.className==="operator"){
+            resize();
             if (preResult.textContent!==""){
                 let lastChar = preResult.textContent.at(-1);
                 if (!operators.some(op=>preResult.textContent.includes(op)) && lastChar !=="."){
@@ -127,7 +128,7 @@ buttons.forEach(button=>{
         }
 
         if(button.className === "decimal"){
-            
+            resize();
             if (!decimal){
                 preResult.textContent += ".";
                 decimal=true;
@@ -145,7 +146,7 @@ buttons.forEach(button=>{
 
 let size = 2;
 function resize(){
-    if (preResult.scrollWidth>screen.scrollWidth-20){
+    if (preResult.scrollWidth>screen.scrollWidth-50){
         preResult.style.fontSize = `${size}em`
         size -=0.3
     }
