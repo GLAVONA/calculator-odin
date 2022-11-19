@@ -4,6 +4,7 @@ const preResult = document.querySelector(".pre-result");
 const screen = document.querySelector(".screen");
 const operators = ["+","-","*","/"]
 const numbersRegex = /(\d*\.?\d+)\D(\d*\.?\d+)/;
+const defaultSize = "2.5em";
 let numberA = 0;
 let numberB = 0;
 let operator = "";
@@ -47,6 +48,8 @@ function allClear(){
         result.textContent="";
         answer = 0;
         operator = "";
+        preResult.style.fontSize = defaultSize;
+        size = 2;
 }
 
 function getNumbers(){
@@ -71,6 +74,7 @@ buttons.forEach(button=>{
                 answer = 0;
                 equalPressed=false;
                 decimal = false;
+                preResult.style.fontSize = defaultSize;
             }
             equalPressed=false;
             preResult.textContent += button.value;
@@ -139,10 +143,13 @@ buttons.forEach(button=>{
 
 })
 
-let size = 1.5;
+let size = 2;
 function resize(){
     if (preResult.scrollWidth>screen.scrollWidth-20){
         preResult.style.fontSize = `${size}em`
         size -=0.3
+    }
+    if(preResult.textContent===""){
+        preResult.style.fontSize = defaultSize;
     }
 }
