@@ -119,6 +119,10 @@ buttons.forEach(button=>{
         }
 
         if (button.className==="equal-sign"){
+            let lastChar = preResult.textContent.at(-1);
+            if (operators.includes(lastChar)){
+                return;
+            }
             equalPressed=true;
             getNumbers();
             answer = operate(operator,numberA,numberB).toFixed(15);
